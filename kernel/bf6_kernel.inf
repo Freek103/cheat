@@ -1,0 +1,38 @@
+[Version]
+Signature="$Windows NT$"
+Class=System
+ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider=%Provider%
+DriverVer=10/29/2026,1.0.0.0
+CatalogFile=bf6_kernel.cat
+PnpLockdown=1
+
+[DestinationDirs]
+DriverCopy=13
+
+[DefaultInstall.NTamd64]
+CopyFiles=DriverCopy
+
+[DefaultInstall.NTamd64.Services]
+AddService=bf6_kernel,0x00000000,BfService
+
+[BfService]
+DisplayName=%SvcName%
+ServiceType=1
+StartType=3
+ErrorControl=1
+ServiceBinary=%13%\bf6_kernel.sys
+
+[DriverCopy]
+bf6_kernel.sys
+
+[SourceDisksNames]
+1=%DiskName%,,,
+
+[SourceDisksFiles]
+bf6_kernel.sys=1
+
+[Strings]
+Provider="BF6 Lab"
+SvcName="BF6 Lab Telemetry Driver"
+DiskName="BF6 Lab Driver Media"

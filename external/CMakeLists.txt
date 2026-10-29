@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.20)
+project(bf6_external LANGUAGES CXX)
+add_executable(bf6_external main.cpp ipc_client.cpp)
+target_compile_features(bf6_external PRIVATE cxx_std_20)
+target_compile_definitions(bf6_external PRIVATE UNICODE _UNICODE)
